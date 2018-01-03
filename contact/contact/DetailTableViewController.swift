@@ -28,9 +28,13 @@ class DetailTableViewController: UITableViewController {
     }
 
     @IBAction func savePerson(_ sender: Any) {
-        person?.name = nameText.text
-        person?.phone = phoneText.text
-        person?.title = titleText.text
+        if person == nil{
+            person = Person()
+        }
+            person?.name = nameText.text
+            person?.phone = phoneText.text
+            person?.title = titleText.text
+        
         completionCallBack?()
         _ = navigationController?.popViewController(animated: true)
     }
