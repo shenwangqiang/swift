@@ -9,20 +9,37 @@
 import UIKit
 
 class ListTableViewController: UITableViewController {
-
+    var personList = [Person]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        loadDate { (list) in
+            self.personList += list
+            
+            self.tableView.reloadData()
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func loadDate(completion: @escaping ( _ list: [Person]) -> ()) -> (){
+        print("数据加载中")
+        DispatchQueue.global().async {
+            Thread.sleep(forTimeInterval: 1)
+            var array = [Person]()
+            for i in 0..<20{
+                let per = Person()
+                per.name = "李四 \(i)"
+                per.phone = "18601"+String(format:"%06d",arc4random_uniform(1000000))
+                per.title = "boss"
+                print("\(per.phone) \(per.name) \(per.title)")
+                array.append(per)
+            }
+            
+            DispatchQueue.main.async (execute: {
+                // Closure use of non-escaping parameter 'completion' may allow it to escape
+                completion(array)
+            })
+        }
     }
 
   

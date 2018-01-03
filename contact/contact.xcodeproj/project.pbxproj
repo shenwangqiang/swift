@@ -13,6 +13,7 @@
 		81187E991FFC914F0082261C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81187E971FFC914F0082261C /* LaunchScreen.storyboard */; };
 		81187EA11FFC93430082261C /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81187EA01FFC93430082261C /* ListTableViewController.swift */; };
 		81187EA31FFC934C0082261C /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81187EA21FFC934C0082261C /* DetailTableViewController.swift */; };
+		81187EA51FFCA9D50082261C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81187EA41FFCA9D50082261C /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		81187E9A1FFC914F0082261C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81187EA01FFC93430082261C /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		81187EA21FFC934C0082261C /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		81187EA41FFCA9D50082261C /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				81187E971FFC914F0082261C /* LaunchScreen.storyboard */,
 				81187E9A1FFC914F0082261C /* Info.plist */,
 				81187EA01FFC93430082261C /* ListTableViewController.swift */,
+				81187EA41FFCA9D50082261C /* Person.swift */,
 				81187EA21FFC934C0082261C /* DetailTableViewController.swift */,
 			);
 			path = contact;
@@ -141,6 +144,7 @@
 			files = (
 				81187EA31FFC934C0082261C /* DetailTableViewController.swift in Sources */,
 				81187E8F1FFC914F0082261C /* AppDelegate.swift in Sources */,
+				81187EA51FFCA9D50082261C /* Person.swift in Sources */,
 				81187EA11FFC93430082261C /* ListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
