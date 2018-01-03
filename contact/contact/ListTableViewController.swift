@@ -31,8 +31,7 @@ class ListTableViewController: UITableViewController {
                 per.name = "李四 \(i)"
                 per.phone = "18601"+String(format:"%06d",arc4random_uniform(1000000))
                 per.title = "boss"
-                print("\(per.phone) \(per.name) \(per.title)")
-                array.append(per)
+               array.append(per)
             }
             
             DispatchQueue.main.async (execute: {
@@ -42,5 +41,34 @@ class ListTableViewController: UITableViewController {
         }
     }
 
+    // MARK: - 数据源方法
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return personList.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
+        cell.textLabel?.text = personList[indexPath.row].name
+        cell.detailTextLabel?.text = personList[indexPath.row].phone
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        performSegue(withIdentifier: "listToDetail", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! DetailTableViewController
+        if let indexPath = sender as? IndexPath{
+            vc.person = personList[indexPath.row]
+            
+            vc.completionCallBack = {
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
+    }
+    
   
 }

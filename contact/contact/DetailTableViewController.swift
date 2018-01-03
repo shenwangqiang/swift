@@ -9,9 +9,29 @@
 import UIKit
 
 class DetailTableViewController: UITableViewController {
-
+    var person:Person?
+    
+    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var phoneText: UITextField!
+    @IBOutlet weak var titleText: UITextField!
+    
+    var completionCallBack: (() -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if person != nil {
+            nameText.text = person?.name
+            phoneText.text = person?.phone
+            titleText.text = person?.title
+        }
     }
 
+    @IBAction func savePerson(_ sender: Any) {
+        person?.name = nameText.text
+        person?.phone = phoneText.text
+        person?.title = titleText.text
+        completionCallBack?()
+        _ = navigationController?.popViewController(animated: true)
+    }
 }
