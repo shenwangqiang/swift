@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		818077B31FFF6F31006904FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818077B21FFF6F31006904FC /* AppDelegate.swift */; };
 		818077BA1FFF6F31006904FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818077B91FFF6F31006904FC /* Assets.xcassets */; };
+		818077D01FFF7EAA006904FC /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818077CF1FFF7EAA006904FC /* WBMainViewController.swift */; };
+		818077D21FFF7F24006904FC /* WBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818077D11FFF7F24006904FC /* WBNavigationController.swift */; };
+		818077D41FFF7F5B006904FC /* WBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818077D31FFF7F5B006904FC /* WBBaseViewController.swift */; };
+		818077D61FFF8092006904FC /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818077D51FFF8092006904FC /* WBHomeViewController.swift */; };
+		818077D81FFF80A7006904FC /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818077D71FFF80A7006904FC /* WBDiscoverViewController.swift */; };
+		818077DA1FFF80B0006904FC /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818077D91FFF80B0006904FC /* WBMessageViewController.swift */; };
+		818077DC1FFF80BD006904FC /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818077DB1FFF80BD006904FC /* WBProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +23,13 @@
 		818077B21FFF6F31006904FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		818077B91FFF6F31006904FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		818077BE1FFF6F31006904FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		818077CF1FFF7EAA006904FC /* WBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
+		818077D11FFF7F24006904FC /* WBNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNavigationController.swift; sourceTree = "<group>"; };
+		818077D31FFF7F5B006904FC /* WBBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBBaseViewController.swift; sourceTree = "<group>"; };
+		818077D51FFF8092006904FC /* WBHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
+		818077D71FFF80A7006904FC /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
+		818077D91FFF80B0006904FC /* WBMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
+		818077DB1FFF80BD006904FC /* WBProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,11 +62,106 @@
 		818077B11FFF6F31006904FC /* weibo */ = {
 			isa = PBXGroup;
 			children = (
+				818077C41FFF7DBF006904FC /* Classes */,
 				818077B21FFF6F31006904FC /* AppDelegate.swift */,
 				818077B91FFF6F31006904FC /* Assets.xcassets */,
 				818077BE1FFF6F31006904FC /* Info.plist */,
 			);
 			path = weibo;
+			sourceTree = "<group>";
+		};
+		818077C41FFF7DBF006904FC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				818077C51FFF7DBF006904FC /* Model */,
+				818077C61FFF7DBF006904FC /* Tools */,
+				818077C71FFF7DBF006904FC /* View */,
+				818077CE1FFF7DBF006904FC /* ViewModel */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		818077C51FFF7DBF006904FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		818077C61FFF7DBF006904FC /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		818077C71FFF7DBF006904FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				818077CB1FFF7DBF006904FC /* Main */,
+				818077CA1FFF7DBF006904FC /* Home */,
+				818077C91FFF7DBF006904FC /* Discover */,
+				818077CC1FFF7DBF006904FC /* Message */,
+				818077CD1FFF7DBF006904FC /* Profile */,
+				818077C81FFF7DBF006904FC /* Compose */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		818077C81FFF7DBF006904FC /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		818077C91FFF7DBF006904FC /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				818077D71FFF80A7006904FC /* WBDiscoverViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		818077CA1FFF7DBF006904FC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				818077D51FFF8092006904FC /* WBHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		818077CB1FFF7DBF006904FC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				818077CF1FFF7EAA006904FC /* WBMainViewController.swift */,
+				818077D11FFF7F24006904FC /* WBNavigationController.swift */,
+				818077D31FFF7F5B006904FC /* WBBaseViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		818077CC1FFF7DBF006904FC /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				818077D91FFF80B0006904FC /* WBMessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		818077CD1FFF7DBF006904FC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				818077DB1FFF80BD006904FC /* WBProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		818077CE1FFF7DBF006904FC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,6 +190,7 @@
 		818077A71FFF6F31006904FC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WB;
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "沈王强";
@@ -125,7 +235,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				818077D41FFF7F5B006904FC /* WBBaseViewController.swift in Sources */,
+				818077DC1FFF80BD006904FC /* WBProfileViewController.swift in Sources */,
+				818077DA1FFF80B0006904FC /* WBMessageViewController.swift in Sources */,
+				818077D01FFF7EAA006904FC /* WBMainViewController.swift in Sources */,
+				818077D81FFF80A7006904FC /* WBDiscoverViewController.swift in Sources */,
+				818077D61FFF8092006904FC /* WBHomeViewController.swift in Sources */,
 				818077B31FFF6F31006904FC /* AppDelegate.swift in Sources */,
+				818077D21FFF7F24006904FC /* WBNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
