@@ -12,24 +12,43 @@ class WBMainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+        let array=[
+            ["clsName":"WBHomeViewController","title":"首页","image":"home"],
+            ["clsName":"WBMessageViewController","title":"消息","image":"message_center"],
+            ["clsName":"WBDiscoverViewController","title":"发现","image":"discover"],
+            ["clsName":"WBProfileViewController","title":"我","image":"profile"],
+        ]
+        
+        var map = [UIViewController]()
+        for dict in array {
+            map.append(controller(dict: dict))
+        }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        viewControllers = map
     }
-    */
-
 }
+
+    extension WBMainViewController {
+        
+        private func setupView(){
+            
+        }
+        
+        private func controller(dict:[String:String]) -> UIViewController{
+            guard let clsName = dict["clsName"],
+            let title = dict["title"],
+            let imageName = dict["image"],
+            let cls  = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type
+            else {
+                    return UIViewController()
+            }
+     
+        
+        let vc = cls.init()
+        vc.title = title
+            vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)
+            vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
+        let nav = WBNavigationController(rootViewController:vc)
+        return nav
+        }
+    }

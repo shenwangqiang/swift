@@ -28,6 +28,7 @@
 		818078001FFF8409006904FC /* UIScreen+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 818077F21FFF8409006904FC /* UIScreen+CZAddition.m */; };
 		818078011FFF8409006904FC /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 818077F41FFF8409006904FC /* UIView+CZAddition.m */; };
 		818078021FFF8409006904FC /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 818077F61FFF8409006904FC /* UIViewController+CZAddition.m */; };
+		8180782820006DEA006904FC /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180782220006DEA006904FC /* Bundle+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		818077F51FFF8409006904FC /* UIViewController+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CZAddition.h"; sourceTree = "<group>"; };
 		818077F61FFF8409006904FC /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
 		818078031FFF8441006904FC /* Weibo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weibo-Bridge.h"; sourceTree = "<group>"; };
+		8180782220006DEA006904FC /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		818077C61FFF7DBF006904FC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				8180782120006DEA006904FC /* Extensions */,
 				818077DD1FFF8409006904FC /* Additions */,
 			);
 			path = Tools;
@@ -236,6 +239,15 @@
 			path = Additions;
 			sourceTree = "<group>";
 		};
+		8180782120006DEA006904FC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8180782220006DEA006904FC /* Bundle+Extensions.swift */,
+			);
+			name = Extensions;
+			path = "../../../../../../Downloads/Weibo-Swift/传智微博/传智微博/Classes/Tools(工具)/Extensions";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -313,6 +325,7 @@
 				818077FF1FFF8409006904FC /* UILabel+CZAddition.m in Sources */,
 				818077F81FFF8409006904FC /* NSAttributedString+CZAdditon.m in Sources */,
 				818078021FFF8409006904FC /* UIViewController+CZAddition.m in Sources */,
+				8180782820006DEA006904FC /* Bundle+Extensions.swift in Sources */,
 				818077FA1FFF8409006904FC /* NSString+CZBase64.m in Sources */,
 				818077DC1FFF80BD006904FC /* WBProfileViewController.swift in Sources */,
 				818077DA1FFF80B0006904FC /* WBMessageViewController.swift in Sources */,
