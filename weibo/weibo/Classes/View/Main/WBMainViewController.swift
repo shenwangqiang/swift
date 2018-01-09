@@ -15,6 +15,7 @@ class WBMainViewController: UITabBarController {
         let array=[
             ["clsName":"WBHomeViewController","title":"首页","image":"home"],
             ["clsName":"WBMessageViewController","title":"消息","image":"message_center"],
+             ["clsName":"UIViewController","title":"消息","image":"message_center"],
             ["clsName":"WBDiscoverViewController","title":"发现","image":"discover"],
             ["clsName":"WBProfileViewController","title":"我","image":"profile"],
         ]
@@ -25,10 +26,28 @@ class WBMainViewController: UITabBarController {
         }
     
         viewControllers = map
+        
+        setupComposeButton()
+    }
+    
+    private lazy var composeButton: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
+    
+    @objc private func composeStatus(){
+        
     }
 }
 
     extension WBMainViewController {
+        
+        private func setupComposeButton(){
+            tabBar.addSubview(composeButton)
+            
+            let count = CGFloat(childViewControllers.count)
+            let w = tabBar.bounds.width / count - 1
+            composeButton.frame  = tabBar.bounds.insetBy(dx: 2*w, dy: 0)
+            
+            composeButton.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
+        }
         
         private func setupView(){
             
@@ -48,6 +67,7 @@ class WBMainViewController: UITabBarController {
         vc.title = title
             vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)
             vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
+            vc.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.orange], for: .highlighted)
         let nav = WBNavigationController(rootViewController:vc)
         return nav
         }
