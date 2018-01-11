@@ -95,6 +95,15 @@
 			path = test;
 			sourceTree = "<group>";
 		};
+		810D9E1B2005AD160019C2B7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				818077CF1FFF7EAA006904FC /* WBMainViewController.swift */,
+				818077D11FFF7F24006904FC /* WBNavigationController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		818077A61FFF6F31006904FC = {
 			isa = PBXGroup;
 			children = (
@@ -190,8 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				810D9E1120045C2C0019C2B7 /* test */,
-				818077CF1FFF7EAA006904FC /* WBMainViewController.swift */,
-				818077D11FFF7F24006904FC /* WBNavigationController.swift */,
+				810D9E1B2005AD160019C2B7 /* controller */,
 				818077D31FFF7F5B006904FC /* WBBaseViewController.swift */,
 			);
 			path = Main;
