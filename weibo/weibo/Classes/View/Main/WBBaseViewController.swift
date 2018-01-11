@@ -9,6 +9,10 @@
 import UIKit
 
 class WBBaseViewController: UIViewController{
+    var userLogo = false
+    
+    var visitorInfo: [String: String]?
+    
     var tableView: UITableView?
     var refreshControl: UIRefreshControl?
     
@@ -34,10 +38,10 @@ class WBBaseViewController: UIViewController{
     }
     
     func setupUI() {
-        view.backgroundColor = UIColor.cz_random()
+        view.backgroundColor = UIColor.white
         automaticallyAdjustsScrollViewInsets = false
         setNavigationBar()
-        setTableView()
+        userLogo ? setTableView() : setupVisitorView()
     }
     
     private func setNavigationBar() {
@@ -46,6 +50,13 @@ class WBBaseViewController: UIViewController{
         navigationBar.barTintColor = UIColor.cz_color(withHex: 0xF6F6F6)
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray]
         
+    }
+    
+    private func setupVisitorView(){
+        let visitorView = WBVisitorView(frame: view.bounds)
+        view.insertSubview(visitorView, belowSubview: navigationBar)
+        
+        visitorView.visitorInfo = visitorInfo
     }
     
     private func setTableView(){

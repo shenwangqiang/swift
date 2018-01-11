@@ -10,6 +10,7 @@
 		810D9E1320045C500019C2B7 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810D9E1220045C500019C2B7 /* WBDemoViewController.swift */; };
 		810D9E172004775C0019C2B7 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810D9E152004775C0019C2B7 /* UIBarButtonItem+Extensions.swift */; };
 		810D9E192004777C0019C2B7 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810D9E182004777C0019C2B7 /* Bundle+Extensions.swift */; };
+		81523E7F2007005D00A8AFDD /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81523E7E2007005D00A8AFDD /* WBVisitorView.swift */; };
 		818077B31FFF6F31006904FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818077B21FFF6F31006904FC /* AppDelegate.swift */; };
 		818077BA1FFF6F31006904FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818077B91FFF6F31006904FC /* Assets.xcassets */; };
 		818077D01FFF7EAA006904FC /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818077CF1FFF7EAA006904FC /* WBMainViewController.swift */; };
@@ -37,6 +38,7 @@
 		810D9E1220045C500019C2B7 /* WBDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 		810D9E152004775C0019C2B7 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		810D9E182004777C0019C2B7 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		81523E7E2007005D00A8AFDD /* WBVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		818077AF1FFF6F31006904FC /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		818077B21FFF6F31006904FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		818077B91FFF6F31006904FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 				818077D11FFF7F24006904FC /* WBNavigationController.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		81523E7D2007002D00A8AFDD /* VisitorView */ = {
+			isa = PBXGroup;
+			children = (
+				81523E7E2007005D00A8AFDD /* WBVisitorView.swift */,
+			);
+			path = VisitorView;
 			sourceTree = "<group>";
 		};
 		818077A61FFF6F31006904FC = {
@@ -198,6 +208,7 @@
 		818077CB1FFF7DBF006904FC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				81523E7D2007002D00A8AFDD /* VisitorView */,
 				810D9E1120045C2C0019C2B7 /* test */,
 				810D9E1B2005AD160019C2B7 /* controller */,
 				818077D31FFF7F5B006904FC /* WBBaseViewController.swift */,
@@ -343,6 +354,7 @@
 			files = (
 				810D9E192004777C0019C2B7 /* Bundle+Extensions.swift in Sources */,
 				810D9E172004775C0019C2B7 /* UIBarButtonItem+Extensions.swift in Sources */,
+				81523E7F2007005D00A8AFDD /* WBVisitorView.swift in Sources */,
 				818077FE1FFF8409006904FC /* UIColor+CZAddition.m in Sources */,
 				818077F71FFF8409006904FC /* NSArray+Log.m in Sources */,
 				818077D41FFF7F5B006904FC /* WBBaseViewController.swift in Sources */,

@@ -12,17 +12,19 @@ class WBMainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let array=[
-            ["clsName":"WBHomeViewController","title":"首页","image":"home"],
-            ["clsName":"WBMessageViewController","title":"消息","image":"message_center"],
-             ["clsName":"UIViewController","title":"消息","image":"message_center"],
-            ["clsName":"WBDiscoverViewController","title":"发现","image":"discover"],
-            ["clsName":"WBProfileViewController","title":"我","image":"profile"],
+        let array  = [
+            ["clsName":"WBHomeViewController" ,"title":"首页","image":"home",
+             "visitorInfo": ["imageName": "","message": "关注一些人，回这里看看有什么惊喜"]],
+            ["clsName":"WBMessageViewController","title":"消息","image":"message_center",
+             "visitorInfo": ["imageName": "visitordiscover_image_message","message": "登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"]],
+             ["clsName":"UIViewController"],
+            ["clsName":"WBDiscoverViewController","title":"发现","image":"discover", "visitorInfo": ["imageName": "visitordiscover_image_message","message": "登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过"]],
+            ["clsName":"WBProfileViewController","title":"我","image":"profile", "visitorInfo": ["imageName": "visitordiscover_image_profile","message": "登录后，你的微博、相册、个人资料会显示在这里，暂时给别人看"]],
         ]
         
         var map = [UIViewController]()
         for dict in array {
-            map.append(controller(dict: dict))
+            map.append(controller(dict: dict as [String : AnyObject]))
         }
     
         viewControllers = map
@@ -53,20 +55,28 @@ class WBMainViewController: UITabBarController {
             
         }
         
-        private func controller(dict:[String:String]) -> UIViewController{
+        private func controller(dict: [String:AnyObject]) -> UIViewController{
             guard let clsName = dict["clsName"],
             let title = dict["title"],
             let imageName = dict["image"],
-            let cls  = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type
+                let cls  = NSClassFromString(Bundle.main.namespace + "." + (clsName as! String)) as? WBBaseViewController.Type ,
+            let visitorDict = dict["visitorInfo"] as? [String: String]
             else {
                     return UIViewController()
             }
      
         
         let vc = cls.init()
-        vc.title = title
-            vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)
-            vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
+            vc.title = title as! String
+            
+            vc.visitorInfo  = visitorDict
+            
+            
+            
+            
+            
+            vc.tabBarItem.image = UIImage(named: "tabbar_" + (imageName as! String))
+            vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + (imageName as! String) + "_selected")?.withRenderingMode(.alwaysOriginal)
             vc.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.orange], for: .highlighted)
         let nav = WBNavigationController(rootViewController:vc)
         return nav
